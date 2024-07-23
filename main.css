@@ -268,10 +268,12 @@ img {
   background-color: #97d8b1;
 }
 .home .bottomNote {
-  padding: 5rem 0;
+  padding: 5rem 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .home .bottomNote p {
   text-align: center;
+  font-size: 13px;
 }
 @media screen and (min-width: 960px) {
   .homeBanner__wrapper .feature {
