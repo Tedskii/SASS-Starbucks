@@ -1,0 +1,25 @@
+@use "../base/base" as *;
+@mixin mediaQuery($width: 940px) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin centerAll() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin gridEven($cols, $gap) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: $gap;
+}
+@mixin imgFit($width: 0px, $height: 0px) {
+  display: block;
+  object-fit: center center;
+  object-fit: cover;
+  width: $width;
+  height: $height;
+}
