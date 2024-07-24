@@ -1,0 +1,53 @@
+@use "../base/base" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/mixins" as *;
+
+.footer__wrapper {
+  .icons {
+    display: flex;
+    gap: 1rem;
+
+    li {
+      //   background-color: $clr-dark;
+      border-radius: 60%;
+      display: inline-block;
+      text-align: center;
+      border: 8px solid transparent;
+      transition: 0.4s ease;
+      a {
+        font-size: 16px;
+        background-color: $clr-dark;
+        color: $clr-light;
+        border-radius: 60%;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:hover {
+        border: 8px solid #e7e7e7;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  .listLink {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    li {
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .copyright {
+    color: #a2a2a2;
+    p {
+      font-size: 14px;
+    }
+  }
+}
