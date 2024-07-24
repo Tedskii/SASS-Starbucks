@@ -69,8 +69,15 @@ img {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
-.btn:hover {
+.btn.bg--transparent:hover {
   background-color: rgba(43, 43, 43, 0.2);
+}
+.btn.bg--primary {
+  color: #ffffff;
+  background-color: #006241;
+}
+.btn.bg--primary:hover {
+  background-color: rgba(0, 98, 65, 0.8);
 }
 
 .footer__wrapper .icons {
@@ -120,6 +127,7 @@ img {
   position: fixed;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 9999;
 }
 .header__nav {
   padding: 0 2rem;
@@ -133,7 +141,6 @@ img {
   right: -100rem;
   top: 8.8rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 1;
   transition: 0.5s ease;
 }
 .header__nav.open {
@@ -259,9 +266,72 @@ img {
   }
 }
 
+.links {
+  padding: 5rem 0;
+}
+.links__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3rem;
+}
+.links__item h4 {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links__item h4 i {
+  transition: 0.3s ease;
+}
+.links__item h4 i.open {
+  transform: rotate(180deg);
+  transition: 0.3s ease;
+}
+.links__item ul {
+  max-height: 0rem;
+  overflow: hidden;
+  transition: 0.5s ease;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.links__item ul.open {
+  max-height: 50rem;
+  transition: 0.5s ease;
+}
+.links__item ul li a {
+  color: #a2a2a2;
+  transition: 0.3s ease;
+}
+.links__item ul li a:hover {
+  color: #2b2b2b;
+  transition: 0.3s ease;
+}
+@media screen and (min-width: 960px) {
+  .links__wrapper {
+    display: flex;
+    gap: 8rem;
+  }
+  .links__item {
+    max-width: 20rem;
+  }
+  .links__item h4 i {
+    display: none;
+  }
+  .links__item ul {
+    max-height: 50rem;
+    margin-left: 0;
+  }
+  .links__item ul li {
+    margin-bottom: 2rem;
+  }
+}
+
 .home {
   width: 100%;
-  padding: 13rem 0;
+  padding-top: 5rem;
 }
 .homeBanner__wrapper {
   display: flex;
@@ -270,7 +340,6 @@ img {
 }
 .homeBanner__wrapper .feature {
   color: #ffffff;
-  padding: 2rem 0;
   padding-top: 0;
   display: flex;
   flex-direction: column;
@@ -297,6 +366,7 @@ img {
 }
 .homeBanner__wrapper .feature:first-child {
   background-color: #006241;
+  margin-top: 8rem;
 }
 .homeBanner__wrapper .feature:nth-child(2) {
   background-color: #a3029a;
@@ -326,14 +396,173 @@ img {
     margin: 0 auto;
     width: 100%;
   }
-  .homeBanner__wrapper .feature img {
-    height: 100%;
+  .homeBanner__wrapper .feature:nth-child(even) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+  }
+  .homeBanner__wrapper .feature:nth-child(even) img {
+    order: 2;
   }
   .home .bottomNote {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    max-width: 60rem;
+    margin: 5rem auto 0 auto;
+  }
+}
+
+.rBanner {
+  background-image: url(/dist/img/hero-mobile_2021.webp);
+  background-size: cover;
+  height: 100vh;
+  background-color: #D4E9E2;
+  background-position-x: center;
+  display: flex;
+  justify-content: center;
+}
+.rBanner__text {
+  transform: translateY(13rem);
+  text-align: center;
+}
+.rBanner__text h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.rBanner__text h3 {
+  font-weight: normal;
+  font-size: 15px;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+.rBanner__text h3 a {
+  text-decoration: underline;
+}
+.rBanner__text h3 a:hover {
+  text-decoration: unset;
+}
+.rBanner__text .rBanner--btn a:last-child {
+  display: none;
+}
+@media screen and (min-width: 960px) {
+  .rBanner {
+    display: flex;
+    justify-content: unset !important;
+    align-items: center;
+    background-image: url(/dist/img/xl-hero-desktop_2021.png);
+  }
+  .rBanner__text {
+    text-align: unset;
+    transform: translateY(0rem);
+  }
+  .rBanner__text .rBanner--btn a:hover {
+    background-color: rgba(0, 98, 65, 0.8);
+  }
+  .rBanner__text .rBanner--btn a:first-child {
+    display: none;
+  }
+  .rBanner__text .rBanner--btn a:last-child {
+    display: unset;
+  }
+}
+
+.coffee {
+  padding: 5rem 0;
+}
+.coffeeNav__wrapper {
+  background-color: #f1f8f5;
+}
+.coffeeNav__wrapper h3 {
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.coffeeNav__wrapper ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.coffeeNav__wrapper ul li {
+  padding: 1rem 2.5rem;
+  border-bottom: 5px solid transparent;
+}
+.coffeeNav__wrapper ul li a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.coffeeNav__wrapper ul li.active {
+  border-bottom: 5px solid #006241;
+  transition: transform 0.5s;
+}
+.coffeeTab__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #D4E9E2;
+  overflow: hidden;
+}
+.coffeeTab__wrapper .coffeeTab__content {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.coffeeTab__wrapper .coffeeTab__content.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+.coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text {
+  text-align: center;
+}
+.coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text h4 {
+  font-weight: 600;
+  margin-top: 4rem;
+  font-size: 18px;
+}
+.coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text p {
+  font-size: 14px;
+  margin: 2rem 2rem;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 960px) {
+  .coffeeNav__wrapper ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .coffeeNav__wrapper ul li a {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .coffeeTab__wrapper {
+    height: 350px;
+  }
+  .coffeeTab__wrapper .coffeeTab__content {
+    margin: 0rem auto;
+    max-width: 80rem;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  .coffeeTab__wrapper .coffeeTab__content.active {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    opacity: 1;
+    transition: 0.5s ease;
+  }
+  .coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text h4 {
+    font-size: 24px;
+    text-align: left;
+  }
+  .coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text p {
+    text-align: left;
+    margin-left: 0;
   }
 }/*# sourceMappingURL=main.css.map */
