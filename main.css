@@ -509,17 +509,21 @@ img {
 .coffeeTab__wrapper .coffeeTab__content {
   position: absolute;
   opacity: 0;
-  transition: 0.5s ease;
 }
 .coffeeTab__wrapper .coffeeTab__content.active {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3rem;
   align-items: center;
   opacity: 1;
-  transition: 0.5s ease;
+  transition: 0.2s ease;
+}
+.coffeeTab__wrapper .coffeeTab__content img {
+  width: 50rem;
 }
 .coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text {
   text-align: center;
+  order: 2;
 }
 .coffeeTab__wrapper .coffeeTab__content .coffeeTab__item__text h4 {
   font-weight: 600;
@@ -548,12 +552,12 @@ img {
     margin: 0rem auto;
     max-width: 80rem;
     opacity: 0;
-    transition: 0.5s ease;
   }
   .coffeeTab__wrapper .coffeeTab__content.active {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
+    gap: 3rem;
     opacity: 1;
     transition: 0.5s ease;
   }

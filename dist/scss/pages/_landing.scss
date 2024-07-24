@@ -188,17 +188,22 @@
     .coffeeTab__content {
       position: absolute;
       opacity: 0;
-      transition: 0.5s ease;
+
       &.active {
-        display: flex;
-        flex-direction: column;
+        @include gridEven(1, 3rem);
+        // display: flex;
+        // flex-direction: column;
         align-items: center;
         opacity: 1;
-        transition: 0.5s ease;
+        transition: 0.2s ease;
+      }
+      img {
+        width: 50rem;
       }
 
       .coffeeTab__item__text {
         text-align: center;
+        order: 2;
         h4 {
           font-weight: 600;
           margin-top: 4rem;
@@ -232,10 +237,11 @@
         margin: 0rem auto;
         max-width: 80rem;
         opacity: 0;
-        transition: 0.5s ease;
 
         &.active {
           @include gridEven(2, 3rem);
+
+          gap: 3rem;
           opacity: 1;
           transition: 0.5s ease;
         }
