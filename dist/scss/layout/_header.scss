@@ -3,9 +3,10 @@
 @use "../abstract/mixins" as *;
 
 .header {
-  background-color: $clr-light;
-  position: fixed;
+  background-color: transparent;
+    // position: fixed;
   width: 100%;
+  background-color: aqua;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   z-index: 9999;
   &__nav {
@@ -24,6 +25,7 @@
     &.open {
       right: 0;
       transition: 0.5s ease;
+      
     }
     .action {
       padding-top: 8rem;
